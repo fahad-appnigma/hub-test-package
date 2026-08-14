@@ -1,0 +1,13 @@
+# Appnigma AI project configuration (v2)
+# See: https://docs.appnigma.ai/config
+version: 2
+project:
+  name: hub-test
+platforms:
+  hubspot:
+    deliverable: app_listing
+agent:
+  review_changes: true
+  auto_deploy: false
+  max_retries: 3
+  communication: detailed
