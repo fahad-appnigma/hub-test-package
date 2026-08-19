@@ -14,7 +14,10 @@ export const RENEWAL_RISK_PROPERTY = 'renewal_risk';
 /** Placeholder shown when a property has no value on the company record. */
 export const NOT_SET = 'Not set';
 
-export const RENEWAL_PROPERTIES = [RENEWAL_DATE_PROPERTY, RENEWAL_RISK_PROPERTY];
+export const RENEWAL_PROPERTIES = [
+  RENEWAL_DATE_PROPERTY,
+  RENEWAL_RISK_PROPERTY,
+];
 
 type TagVariant = 'success' | 'warning' | 'error' | 'default';
 
@@ -42,11 +45,14 @@ export const isBlank = (value: string | null | undefined): boolean =>
   value === null || value === undefined || value.trim() === '';
 
 export const RenewalSummary = () => {
-  const { properties, isLoading, error } = useCrmProperties(RENEWAL_PROPERTIES, {
-    // Let HubSpot format the values server-side so the renewal date renders in
-    // the portal's standard date format and the risk shows its dropdown label.
-    propertiesToFormat: RENEWAL_PROPERTIES,
-  });
+  const { properties, isLoading, error } = useCrmProperties(
+    RENEWAL_PROPERTIES,
+    {
+      // Let HubSpot format the values server-side so the renewal date renders in
+      // the portal's standard date format and the risk shows its dropdown label.
+      propertiesToFormat: RENEWAL_PROPERTIES,
+    },
+  );
 
   if (isLoading) {
     return <LoadingSpinner label="Loading renewal details" />;
@@ -65,7 +71,9 @@ export const RenewalSummary = () => {
           {isBlank(renewalRisk) ? (
             <Text>{NOT_SET}</Text>
           ) : (
-            <Tag variant={riskVariant(renewalRisk as string)}>{renewalRisk}</Tag>
+            <Tag variant={riskVariant(renewalRisk as string)}>
+              {renewalRisk}
+            </Tag>
           )}
         </DescriptionListItem>
       </DescriptionList>
