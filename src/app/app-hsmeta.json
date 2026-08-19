@@ -3,24 +3,19 @@
   "type": "app",
   "config": {
     "name": "hub-test",
-    "description": "hub-test HubSpot app",
-    "distribution": "marketplace",
+    "description": "Surfaces a company's renewal date and renewal risk level on the Company record.",
+    "distribution": "private",
     "auth": {
-      "type": "oauth",
-      "redirectUrls": [
-        "https://example.com/oauth/callback"
-      ],
+      "type": "static",
       "requiredScopes": [
         "oauth",
-        "crm.objects.contacts.read"
+        "crm.objects.companies.read"
       ],
       "optionalScopes": [],
       "conditionallyRequiredScopes": []
     },
     "permittedUrls": {
-      "fetch": [
-        "https://api.hubapi.com"
-      ],
+      "fetch": [],
       "iframe": [],
       "img": []
     }

@@ -1,0 +1,11 @@
+{
+  "uid": "renewal_summary_card",
+  "type": "card",
+  "config": {
+    "name": "Renewal Summary",
+    "description": "Read-only view of a company's renewal date and renewal risk level.",
+    "entrypoint": "/app/cards/RenewalSummaryCard.tsx",
+    "location": "crm.record.sidebar",
+    "objectTypes": ["COMPANY"]
+  }
+}
