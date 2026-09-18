@@ -1,0 +1,9 @@
+{
+  "name": "hub-test-package",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HubSpot app hub-test: creates a Salesbricks standalone invoice when a deal is marked Closed Won.",
+  "scripts": {
+    "test": "node --test test/**/*.test.js"
+  }
+}
