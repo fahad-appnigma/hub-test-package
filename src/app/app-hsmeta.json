@@ -3,7 +3,7 @@
   "type": "app",
   "config": {
     "name": "hub-test",
-    "description": "hub-test HubSpot app",
+    "description": "Creates a Salesbricks standalone invoice automatically when a HubSpot deal is marked Closed Won.",
     "distribution": "marketplace",
     "auth": {
       "type": "oauth",
@@ -12,14 +12,20 @@
       ],
       "requiredScopes": [
         "oauth",
-        "crm.objects.contacts.read"
+        "crm.objects.deals.read",
+        "crm.objects.deals.write",
+        "crm.objects.companies.read",
+        "crm.objects.contacts.read",
+        "crm.objects.line_items.read",
+        "automation"
       ],
       "optionalScopes": [],
       "conditionallyRequiredScopes": []
     },
     "permittedUrls": {
       "fetch": [
-        "https://api.hubapi.com"
+        "https://api.hubapi.com",
+        "https://api.salesbricks.com"
       ],
       "iframe": [],
       "img": []
